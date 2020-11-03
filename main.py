@@ -2,13 +2,19 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 import datetime
+import os
+from Linkedin_Crawler import Login_linkedin, scroll, get_all_links, crawl_skills, driver
+
 
 webdriver_options = webdriver.ChromeOptions()
 webdriver_options.add_argument('headless')
-driver =  webdriver.Chrome("chromedriver.exe")
+#driverpath = os.getcwd()+"/chromedriver_win"
+#driverpath = os.getcwd()+"/chromedriver"
+#driver = webdriver.Chrome(driverpath)
 wait = WebDriverWait(driver, 10)
 
-from Linkedin_Crawler import Login_linkedin, scroll, get_all_links, crawl_skills
+
+driver
 
 Login_linkedin()
 print ("Logging in...: ")

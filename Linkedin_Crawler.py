@@ -11,10 +11,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
+import os
 
 webdriver_options = webdriver.ChromeOptions()
 webdriver_options.add_argument('headless')
-driver =  webdriver.Chrome("chromedriver.exe")
+driverpath = os.getcwd()+"/chromedriver"
+driver = webdriver.Chrome(driverpath)
 wait = WebDriverWait(driver, 10)
 
 
